@@ -14,4 +14,5 @@ TODO-App is a simple project that is created using TypeScript. This is a project
 	- TypeScript
     
 ## Sample Images
+This is the inerface of the project
 
