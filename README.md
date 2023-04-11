@@ -20,4 +20,8 @@ TODO-App is a simple project that is created using TypeScript. This is a project
 
 -- Now you can see the marked tasks are shown in completed. And also shown the all task count and incompleted task count.
 
+![Screenshot (285)](https://user-images.githubusercontent.com/80310518/231250168-107f3f9b-ea61-49e1-a2cc-e427f478b990.png)
+
 -- After we can edit tasks.
+
+![Screenshot (286)](https://user-images.githubusercontent.com/80310518/231250217-77c4fd00-de55-4348-9a71-0cb137ba4b37.png)
