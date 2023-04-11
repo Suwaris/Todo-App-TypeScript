@@ -1,15 +1,39 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
-    font-family: sans-serif;
+    font-family: "Open Sans", sans-serif;
+    background-color: rgb(2, 19, 68);
+  }
+
+h1 {
+    color: #acbee7;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+}
+  
+#titleBar {
+    margin: 20px;
+}
+
+#icon {
+    margin-right: 10px;
+}
+
+#inputId {
+    width: 100%;
+    height: auto;
+    background-color: #f2f3f7;
+    box-sizing: border-box;
+    font-size: 16px;
+    display: flex;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 800px;
     height: 100vh;
     margin: 0 auto;
     padding: 20px;
@@ -20,8 +44,8 @@ body {
 }
 
 form{
-    padding: 10px;
-    width: 300px;
+    padding: 5px;
+    width: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,25 +57,39 @@ input[type="text"] {
     border-radius: 5px;
     margin: 20px;
     width: 100%;
+    font-weight: bold;
 }
 
-input[type="checkbox"]{
-    margin-left: 10px;
+input[type="checkbox"] {
+    margin-top: 6px;
     cursor: pointer;
+    margin-left: 5px;
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+  }
+
+#addButton{
+    width: 10%;
+    font-weight: bold;
+    background-color: #889de0f8;
 }
 
 button {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #8d86868c;
     border-radius: 5px;
     margin: 20px;
     margin-left: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 
 table, th, td {
-    border: 1px solid;
+    border: 1px solid #ddd;
+    color: white;
+    
   }
 
 table {
@@ -60,23 +98,71 @@ table {
     border: 1px solid #ddd;
 }
 
-tr:hover {
-    background-color: rgb(186, 243, 186);
-}
 
 td {
-    text-align: center;
     padding-top: 7px;
-}
-
-checkbox {
-    text-align: left;
+    width: 150px;
 }
 
 td[btn-delete]{
     text-align: center;
 }
 
+#idCheckbox {
+    margin-left: 20px;
+}
+
+#idEdit {
+    text-align: center;
+}
+
+#idDel {
+    text-align: center;
+}
+
 p {
     margin-bottom: 20px;
+    color: white;
+}
+
+.btn-edit {
+  background-color: rgb(1, 189, 1);
+  color: rgb(1, 1, 36);
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  border: none;
+  border-radius: 3px;
+  color: rgb(1, 1, 36);
+  margin-right: 10px;
+  margin-left: auto;
+  font-size: 12px;
+  height: 30px;
+  width: 75px;
+  
+}
+
+.btn-delete {
+  background-color: red;
+  color: rgb(1, 1, 36);
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  height: 30px;
+  width: 75px;
+}
+
+.btn-edit:hover,
+.btn-edit:active {
+  background-color: green;
+  color: #c0c5d1;
+}
+
+.btn-delete:hover,
+.btn-delete:active {
+  background-color: rgb(168, 7, 7);
+  color: #c0c5d1;
 }

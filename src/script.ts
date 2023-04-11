@@ -86,20 +86,20 @@ const appendTodoToDOM = (todo: Todo) => {
   table.innerHTML = `
     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
       <tbody>
-        <td>
+      <tr>
+        <td id="idCheckbox">
           <input type="checkbox" class="checkbox" ${todo.completed ? 'checked' : ''}>
           <span class="task ${todo.completed ? 'completed' : ''}">${todo.task}</span>
         </td>
-        <td>
-          <button class="btn-delete" style="background-color: rgb(241, 97, 97); 
-                                            text-align: center; display: inline-block; border-color: black;">Delete</button>
+        <td id="idEdit">
+          <button class="btn-edit">Edit</button>
         </td>
-        <td>
-          <button class="btn-edit" style="background-color: rgb(8, 248, 8); 
-                                          border-color: black;">Edit</button>
+        <td id="idDel">
+          <button class="btn-delete">Delete</button>
         </td>
+      </tr>
       </tbody>
-    </table> 
+    </table>
   `;
 
   const checkbox = table.querySelector('.checkbox') as HTMLInputElement;
@@ -123,8 +123,21 @@ const updateTodoList = () => {
 // Function to update the todo count in the DOM
 function updateTodoCount() {
   const count = todos.length;
-  todoCount.textContent = `${count} task${count !== 1 ? 's' : ''} remaining`;
+  let completedCount = 0; // Initialize completedCount to 0
+  todos.forEach(todo => {
+    if (todo.completed) {
+      completedCount++; // Increment completedCount for each completed task
+    }
+  });
+  const remainingCount = count - completedCount; // Calculate remaining tasks
+  todoCount.textContent = `${remainingCount} task${remainingCount !== 1 ? 's' : ''} remaining`;
+
+  todoCount.innerHTML = `<nav class="nav todo-nav">
+                                  <p>All : <span>${count}</span> | Completed : <span>${completedCount}</span> | Incompleted :  <span>${remainingCount}</p>
+                                  </nav>`;
 }
+
+
 
 // Load todos from localStorage
 const loadTodos = () => {
