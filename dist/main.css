@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form{
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    width: 100%;
+}
+
+input[type="checkbox"]{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
+table, th, td {
+    border: 1px solid;
+  }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: rgb(186, 243, 186);
+}
+
+td {
+    text-align: center;
+    padding-top: 7px;
+}
+
+checkbox {
+    text-align: left;
+}
+
+td[btn-delete]{
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+}
