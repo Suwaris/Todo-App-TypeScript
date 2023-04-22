@@ -11,7 +11,7 @@ const inputTodo = document.querySelector('.todo-input') as HTMLInputElement;
 const btnAddTodo = document.querySelector('.todo-btn-add') as HTMLButtonElement;
 const todoList = document.querySelector('.todo-list') as HTMLUListElement;
 const todoCount = document.querySelector('.todoCount') as HTMLSpanElement;
-const err = document.querySelector('.errMsg') as HTMLSpanElement;
+const err = document.querySelector('.errMsg') as HTMLParagraphElement;
 
 // Initialize todos array
 let todos: Todo[] = [];
@@ -26,13 +26,18 @@ const handleSubmit = (e: Event) => {
   if (newTask === '') {
     // Display an error message or take appropriate action
     console.error('Error: Task cannot be empty');
-    return; // return early if validation fails
 
-    const err = document.createElement('err');
+     // Update the error message element with the error message
+    // const err = document.createElement('err');
     err.innerHTML = `
-    <p>Error: Task cannot be empty</p>
+            <p class="errMsg">Error: Task cannot be empty</p>
     `;
-  }
+
+    return; // return early if validation fails
+    }
+     // Clear the error message if the task is not empty
+    err.innerHTML = '';
+  
 
   // If task is not empty, add it to todos
   if (newTask !== '') {
@@ -70,6 +75,10 @@ const handleEdit = (id: number, task: string) => {
   }
 };
 
+// Add form submit event listener
+formTodo.addEventListener('submit', handleSubmit);
+
+
 // Handle toggle completed status
 const handleToggleCompleted = (id: number) => {
   const todoIndex = todos.findIndex(todo => todo.id === id);
@@ -77,8 +86,10 @@ const handleToggleCompleted = (id: number) => {
     todos[todoIndex].completed = !todos[todoIndex].completed;
     saveTodos();
     updateTodoList();
+    updateTodoCount();
   }
 };
+
 
 // Append todo to DOM
 const appendTodoToDOM = (todo: Todo) => {
@@ -144,6 +155,7 @@ const loadTodos = () => {
   const storedTodos = localStorage.getItem('todos');
   todos = storedTodos ? JSON.parse(storedTodos) : [];
   updateTodoList();
+  updateTodoCount();
 };
 
 // Save todos to localStorage
@@ -151,12 +163,9 @@ const saveTodos = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
 
-// Add form submit event listener
-formTodo.addEventListener('submit', handleSubmit);
+
   
 // Load todos from localStorage on page load
   loadTodos();
 
-function updateTodoCount1() {
-  throw new Error("Function not implemented.");
-}
+

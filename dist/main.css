@@ -1,11 +1,14 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: rgb(2, 19, 68);
+    background-image: url('../images/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
 
 h1 {
-    color: #acbee7;
+    color: #052a81;
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -29,7 +32,7 @@ h1 {
     box-sizing: border-box;
     font-size: 16px;
     display: flex;
-    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0.5rem 0.5rem 1rem rgba(82, 80, 80, 0.5);
 }
 
 .container {
@@ -75,6 +78,12 @@ input[type="checkbox"] {
     background-color: #889de0f8;
 }
 
+#addButton:hover,
+#addButton:active {
+  background-color: rgb(13, 5, 92);
+  color: #c0c5d1;
+}
+
 button {
     padding: 10px;
     border: 1px solid #8d86868c;
@@ -87,15 +96,16 @@ button {
 
 
 table, th, td {
-    border: 1px solid #ddd;
-    color: white;
+    border: 1px solid #09076d;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
     
   }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #ddd;
+    border: 1px solid #09076d;
 }
 
 
@@ -122,7 +132,13 @@ td[btn-delete]{
 
 p {
     margin-bottom: 20px;
-    color: white;
+    color: rgb(5, 48, 236);
+}
+
+.errMsg {
+    margin-bottom: 20px;
+    margin-left: 130px;
+    color: rgb(255, 2, 2);
 }
 
 .btn-edit {
