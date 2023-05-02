@@ -17,7 +17,6 @@ const handleSubmit = (e) => {
         // Display an error message or take appropriate action
         console.error('Error: Task cannot be empty');
         // Update the error message element with the error message
-        // const err = document.createElement('err');
         err.innerHTML = `
             <p class="errMsg">Error: Task cannot be empty</p>
     `;
@@ -25,6 +24,15 @@ const handleSubmit = (e) => {
     }
     // Clear the error message if the task is not empty
     err.innerHTML = '';
+    // Check if the task already exists in the todos array
+    const taskExists = todos.some((todo) => todo.task === newTask);
+    if (taskExists) {
+        console.error('Error: Task already exists');
+        err.innerHTML = `
+      <p class="errMsg">Error: Task already exists</p>
+    `;
+        return; // return early if task already exists
+    }
     // If task is not empty, add it to todos
     if (newTask !== '') {
         const todo = {
@@ -103,13 +111,13 @@ const appendTodoToDOM = (todo) => {
 // Update todo list in DOM
 const updateTodoList = () => {
     todoList.innerHTML = '';
-    todos.forEach(todo => appendTodoToDOM(todo));
+    todos.map(todo => appendTodoToDOM(todo));
 };
 // Function to update the todo count in the DOM
 function updateTodoCount() {
     const count = todos.length;
     let completedCount = 0; // Initialize completedCount to 0
-    todos.forEach(todo => {
+    todos.map(todo => {
         if (todo.completed) {
             completedCount++; // Increment completedCount for each completed task
         }
